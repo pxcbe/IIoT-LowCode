@@ -1,0 +1,101 @@
+[
+  {
+    "@id": "dtmi:pxcbe:PumpIIOT5xn;1",
+    "@type": "Interface",
+    "contents": [
+      {
+        "@id": "dtmi:pxcbe:PumpIIOT5xn:FlowRate;1",
+        "@type": "Telemetry",
+        "displayName": {
+          "en": "Flow Rate"
+        },
+        "name": "FlowRate",
+        "schema": "integer"
+      },
+      {
+        "@id": "dtmi:pxcbe:PumpIIOT5xn:PumpStatus;1",
+        "@type": [
+          "Property",
+          "State"
+        ],
+        "displayName": {
+          "en": "PumpStatus"
+        },
+        "name": "PumpStatus",
+        "schema": {
+          "@id": "dtmi:pxcbe:PumpIIOT5xn:PumpStatus:schema;1",
+          "@type": "Enum",
+          "enumValues": [
+            {
+              "@id": "dtmi:pxcbe:PumpIIOT5xn:PumpStatus:schema:OFF;1",
+              "displayName": {
+                "en": "OFF"
+              },
+              "enumValue": 0,
+              "name": "OFF"
+            },
+            {
+              "@id": "dtmi:pxcbe:PumpIIOT5xn:PumpStatus:schema:ON;1",
+              "displayName": {
+                "en": "ON"
+              },
+              "enumValue": 1,
+              "name": "ON"
+            },
+            {
+              "@id": "dtmi:pxcbe:PumpIIOT5xn:PumpStatus:schema:FULLPOWER;1",
+              "displayName": {
+                "en": "FULL POWER"
+              },
+              "enumValue": 2,
+              "name": "FULLPOWER"
+            }
+          ],
+          "valueSchema": "integer"
+        },
+        "writable": false
+      },
+      {
+        "@id": "dtmi:pxcbe:PumpIIOT5xn:ChangeMode;1",
+        "@type": "Command",
+        "commandType": "synchronous",
+        "displayName": {
+          "en": "ChangeMode"
+        },
+        "name": "ChangeMode",
+        "request": {
+          "@type": "CommandPayload",
+          "displayName": {
+            "en": "SetMode"
+          },
+          "name": "SetMode",
+          "schema": "integer"
+        }
+      },
+      {
+        "@id": "dtmi:pxcbe:PumpIIOT5xn:ChangeSetPoint;1",
+        "@type": "Command",
+        "commandType": "synchronous",
+        "displayName": {
+          "en": "Change SetPoint"
+        },
+        "name": "ChangeSetPoint",
+        "request": {
+          "@type": "CommandPayload",
+          "displayName": {
+            "en": "SetPoint"
+          },
+          "name": "SetPoint",
+          "schema": "integer"
+        }
+      }
+    ],
+    "displayName": {
+      "en": "Pump_IIOT"
+    },
+    "@context": [
+      "dtmi:iotcentral:context;2",
+      "dtmi:dtdl:context;2"
+    ]
+  }
+]
